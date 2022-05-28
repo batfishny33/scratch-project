@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render } from 'react-dom';
 
 
@@ -21,12 +21,15 @@ import Signup from '../components/Signup.jsx';
   <button onClick={()=>{navigate('/signup')}}>Sign up here</button>
  */
 function App() {
-  
+
+  const [ currentUser, setCurrentUser ] =  useState({});
+
   return (
     <div>
       <h1>U &amp; I</h1>
       <Login />
       <Signup />
+      <Home />
       
 
       </div>

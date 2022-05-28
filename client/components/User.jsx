@@ -1,9 +1,11 @@
 import React from 'react';
-import { render } from 'react-dom';
 
 function User() {
+  const { fullName, username, imgURL, bio, techStack, likedUsers } = userDetails;
   return (
-    <div>User</div>
+    <div>
+      {fullName},{username},{imgURL},{bio},{techStack},{likedUsers}
+    </div>
   )
 }
 
