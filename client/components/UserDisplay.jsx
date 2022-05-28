@@ -10,12 +10,15 @@ function UserDisplay() {
   const users = [];
   useEffect(() => {
 
+    const users = [];
     const fetchData = async () => {
-      const user = await axios.get('/users');
+      const { data } = await axios.get('/users');
+      for(let i = 0; i < data.length; i++){
+        users.push(<User userDetails={data[i]} key={data[i].username} />)
+      }
     }
-
+    fetchData();  
     
-
   },[]);
 
   
