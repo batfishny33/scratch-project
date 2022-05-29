@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route ,Link } from 'react-router-dom';
 //POST to users/signin
 //with body: username, password
 
+
+//I want to use useNavigate as it's cleaner(just a button) but I couldn't make it work 
 function Login() {
 
   return (
@@ -15,7 +17,6 @@ function Login() {
         <input type='text' name='password' id='password'></input>
         <input type='submit' value='Log In'></input>
       </form>
- 
       <Router>
       <Link to='/signup'>Sign up here</Link>
       <Routes>

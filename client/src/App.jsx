@@ -21,7 +21,7 @@ import Login from '../components/Login.jsx';
 function App() {
 
   const [ currentUser, setCurrentUser ] =  useState({fullName: 'Ninja', username: 'nagoya123', password: '123'});
-  const [ loggedIn, setLoggedin ] = useState(false);
+  const [ loggedIn, setLoggedin ] = useState(true);
 
   return (
     <div>
