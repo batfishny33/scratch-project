@@ -10,17 +10,19 @@ function UserDisplay(props) {
 
   const {users} = props;
 
-  useEffect(() => {
+  // currently cannot fetch 
   
-    const fetchData = async () => {
-      const { data } = await axios.get('/users');
-      for(let i = 0; i < data.length; i++){
-        users.push(<User userDetails={data[i]} key={data[i].username} />)
-      }
-    }
-    fetchData();  
+  // useEffect(() => {
+  
+  //   const fetchData = async () => {
+  //     const { data } = await axios.get('/users');
+  //     for(let i = 0; i < data.length; i++){
+  //       users.push(<User userDetails={data[i]} key={data[i].username} />)
+  //     }
+  //   }
+  //   fetchData();  
     
-  },[]) 
+  // },[]) 
 
 
   //dummyData before really fetching from the backend, change to render{data} when fetch works

@@ -4,7 +4,7 @@ function User(props) {
   const { fullName, username, imgURL, bio, techStack, likedUsers } = props.userDetails;
   return (
     <div>
-      Usersssss 
+      All users:
       {fullName},{username},{imgURL},{bio},{techStack},{likedUsers}
     </div>
   )

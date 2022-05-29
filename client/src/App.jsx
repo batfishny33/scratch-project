@@ -1,8 +1,8 @@
 
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import Home from './Home.jsx';
 import Login from '../components/Login.jsx';
-
+import { currentUserContext } from './Context.js';
 
 /*
 
@@ -20,13 +20,17 @@ import Login from '../components/Login.jsx';
  */
 function App() {
 
-  const [ currentUser, setCurrentUser ] =  useState({fullName: 'Ninja', username: 'nagoya123', password: '123'});
+  const [ currentUser, setCurrentUser ] =  useState({fullName: 'Ninja', username: 'nagoya123', password: '123', likedMe: ['sexy boy', 'fluffy gatito'], likedUsers: ['sexier boy', 'sexy boy', 'fluffy gatito'], matches: ['sexy boy', 'fluffy gatito'] });
   const [ loggedIn, setLoggedin ] = useState(true);
+ 
 
   return (
     <div>
       <h1>U &amp; I</h1>
-      {loggedIn ? <Home /> : <Login />}  
+      <currentUserContext.Provider value={currentUser} >
+         {loggedIn ? <Home /> : <Login />}  
+      </currentUserContext.Provider>
+     
       </div>
       
   )
