@@ -1,10 +1,8 @@
+
 import React, { useState } from 'react';
-import { render } from 'react-dom';
-
-
 import Home from './Home.jsx';
 import Login from '../components/Login.jsx';
-import Signup from '../components/Signup.jsx';
+
 
 /*
 
@@ -22,17 +20,15 @@ import Signup from '../components/Signup.jsx';
  */
 function App() {
 
-  const [ currentUser, setCurrentUser ] =  useState({});
+  const [ currentUser, setCurrentUser ] =  useState({fullName: 'Ninja', username: 'nagoya123', password: '123'});
+  const [ loggedIn, setLoggedin ] = useState(false);
 
   return (
     <div>
       <h1>U &amp; I</h1>
-      <Login />
-      <Signup />
-      <Home />
-      
-
+      {loggedIn ? <Home /> : <Login />}  
       </div>
+      
   )
 }
 

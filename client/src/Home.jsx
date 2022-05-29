@@ -7,6 +7,7 @@ import UserDisplay from '../components/UserDisplay';
 function Home() {
   return (
     <div>
+      HOME
       <Sidebar />
       <UserDisplay />
     </div>

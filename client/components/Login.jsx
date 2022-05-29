@@ -1,10 +1,11 @@
 import React from 'react';
-
-
+import Signup from '../components/Signup.jsx';
+import { BrowserRouter as Router, Routes, Route ,Link } from 'react-router-dom'; 
 //POST to users/signin
 //with body: username, password
 
 function Login() {
+
   return (
     <div>Login
       <form className="login" action='/users/signin' method='post'>
@@ -14,6 +15,16 @@ function Login() {
         <input type='text' name='password' id='password'></input>
         <input type='submit' value='Log In'></input>
       </form>
+ 
+      <Router>
+      <Link to='/signup'>Sign up here</Link>
+      <Routes>
+        <Route path='/signup' element={<Signup />} />
+      </Routes>
+    </Router>
+
+
+
     </div>
 
   )
