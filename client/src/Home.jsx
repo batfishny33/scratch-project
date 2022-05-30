@@ -1,12 +1,16 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-
+import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import UserDisplay from '../components/UserDisplay';
+import '../styles/home.css';
 
-function Home() {
+const Home = () => {
+  const [loggedInAs, setLoggedInAs] = useState('');
+
   return (
-    <div>Home</div>
+    <div id="HOME">
+      <Sidebar className="sidebar"/>
+      <UserDisplay className="user-display"/>
+    </div>
   )
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 import Home from './Home.jsx';
@@ -23,13 +23,13 @@ import Signup from '../components/Signup.jsx';
 function App() {
   
   return (
-    <div>
-      <h1>U &amp; I</h1>
-      <Login />
-      <Signup />
-      
-
-      </div>
+  <Router>
+    <Routes>
+        <Route path="/" exact element={<Login />} />
+        <Route path="/home" exact element={<Home />} />
+        <Route path="/signup" exact element={<Signup />} />
+    </Routes>
+  </Router>
   )
 }
 
