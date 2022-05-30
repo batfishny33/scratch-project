@@ -1,10 +1,13 @@
-import React from 'react';
-import { render } from 'react-dom';
+import React, { useContext } from 'react';
+import { currentUserContext } from '../src/Context';
 
 
-function Match() {
+function Match(props) {
+  const currentUser = useContext(currentUserContext)
+  console.log('in matches',props)
+  const { username } = props;
   return (
-    <div>Match</div>
+    <div>matches: {username}</div>
   )
 }
 

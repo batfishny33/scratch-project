@@ -1,10 +1,8 @@
-import React from 'react';
-import { render } from 'react-dom';
 
-
+import React, { useState, createContext } from 'react';
 import Home from './Home.jsx';
 import Login from '../components/Login.jsx';
-import Signup from '../components/Signup.jsx';
+import { currentUserContext } from './Context.js';
 
 /*
 
@@ -21,15 +19,20 @@ import Signup from '../components/Signup.jsx';
   <button onClick={()=>{navigate('/signup')}}>Sign up here</button>
  */
 function App() {
-  
+
+  const [ currentUser, setCurrentUser ] =  useState({fullName: 'Ninja', username: 'nagoya123', password: '123', likedMe: ['sexy boy', 'fluffy gatito'], likedUsers: ['sexier boy', 'sexy boy', 'fluffy gatito'], matches: ['sexy boy', 'fluffy gatito'] });
+  const [ loggedIn, setLoggedin ] = useState(true);
+ 
+
   return (
     <div>
       <h1>U &amp; I</h1>
-      <Login />
-      <Signup />
-      
-
+      <currentUserContext.Provider value={currentUser} >
+         {loggedIn ? <Home /> : <Login />}  
+      </currentUserContext.Provider>
+     
       </div>
+      
   )
 }
 
