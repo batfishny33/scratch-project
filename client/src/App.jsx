@@ -8,13 +8,17 @@ import { currentUserContext } from './Context.js';
 
 /*
 
-  <Router>
-    <Routes>
+    <currentUserContext.Provider value={currentUser} >
         <Route path="/" exact element={<Login />} />
         <Route path="/home" exact element={<Home />} />
         <Route path="/signup" exact element={<Signup />} />
-    </Routes>
-  </Router>
+    </currentUserContext.Provider>
+
+
+
+      <currentUserContext.Provider value={currentUser} >
+        <Route path="/" exact element={<Login />} />
+      </currentUserContext.Provider>
   
   <Link to="/signup"></Link>
   let navigate = useNavigate();
@@ -22,20 +26,18 @@ import { currentUserContext } from './Context.js';
  */
 function App() {
 
-  const [ currentUser, setCurrentUser ] =  useState({fullName: 'Ninja', username: 'nagoya123', password: '123', likedMe: ['sexy boy', 'fluffy gatito'], likedUsers: ['sexier boy', 'sexy boy', 'fluffy gatito'], matches: ['sexy boy', 'fluffy gatito'] });
-  const [ loggedIn, setLoggedin ] = useState(true);
+  const [ currentUser, setCurrentUser ] =  useState("");
+  // const [ loggedIn, setLoggedin ] = useState(false);
  
 
   return (
-
-
-    <div>
-      <h1>U &amp; I</h1>
-      <currentUserContext.Provider value={currentUser} >
-         {loggedIn ? <Home /> : <Login />}  
-      </currentUserContext.Provider>
-     
-      </div>
+  <Router>
+    <Routes>
+        <Route path="/" exact element={<Login />} />
+        <Route path="/home" exact element={<Home />} />
+        <Route path="/signup" exact element={<Signup />} />
+    </Routes>
+  </Router>
       
   )
 }

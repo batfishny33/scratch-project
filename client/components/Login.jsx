@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import '../styles/login.css';
 import Signup from '../components/Signup.jsx';
-import { BrowserRouter as Router, Routes, Route ,Link } from 'react-router-dom'; 
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; 
+import { currentUserContext } from '../src/Context.js';
 
 //POST to users/signin
 //with body: username, password
@@ -28,7 +28,7 @@ function Login() {
     // testing input is working
     console.log(usernameInput, passwordInput);
     // send axios post
-    axios.post('http://localhost:3000/users/signin', {
+    axios.post('/users/signin', {
       username: usernameInput,
       password: passwordInput,
     }).then((res) => {
@@ -37,6 +37,7 @@ function Login() {
         // displays error msg if invalid
         document.querySelector('.error-msg').style.display = 'block';
       } else {
+
         window.location.assign('/home');
       }
     })
@@ -47,7 +48,7 @@ function Login() {
 
   return (
     <div id="LOGIN">
-      <h1 className="login-title">Love Overflow!</h1>
+      <h1 className="login-title">U & I</h1>
       <div className="login-form">
         <h1>Login</h1>
         <input required className="username-input" onChange={handleUsernameInput} value={usernameInput} type="text" placeholder="Username" />
@@ -57,26 +58,7 @@ function Login() {
       </div>
       <Link className="create-acc-link" to="/signup">Create An Account</Link>
     </div>
-
-
-  return (
-    <div>Login
-      <form className="login" action='/users/signin' method='post'>
-        <label for='username'>Username: </label>
-        <input type='text' name='username' id='username'></input>
-        <label for='password'>Password: </label>
-        <input type='text' name='password' id='password'></input>
-        <input type='submit' value='Log In'></input>
-      </form>
-      <Router>
-      <Link to='/signup'>Sign up here</Link>
-      <Routes>
-        <Route path='/signup' element={<Signup />} />
-      </Routes>
-    </Router>
-    </div>
-
-  )
+  );
 }
 
 export default Login;

@@ -1,0 +1,5 @@
+.display-container {
+  padding: 5% 5%;
+  max-height: 100vh;
+  overflow-y: scroll;
+}
