@@ -2,35 +2,15 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/login.css';
-import React from 'react';
 import Signup from '../components/Signup.jsx';
 import { BrowserRouter as Router, Routes, Route ,Link } from 'react-router-dom'; 
+
 //POST to users/signin
 //with body: username, password
 
 
 //I want to use useNavigate as it's cleaner(just a button) but I couldn't make it work 
 function Login() {
-  // FILL DATABASE W RANDOM USERS
-  // const getRandomDataAndPostToDB = async () => {
-  //   // fetch from random user api
-  //   const randomUser = await axios.get('https://randomuser.me/api/');
-  //   // post into db
-  //   const { name, gender, cell, dob, login, picture } = randomUser.data.results[0];
-
-  //   await axios.post('/users', {
-  //     age: dob.age,
-  //     fullName: `${name.first} ${name.last}`,
-  //     gender: gender,
-  //     username: login.username,
-  //     password: login.password,
-  //     phone: cell,
-  //     imgURL: picture.large,
-  //     bio: "Music & VIBES",
-  //     techStack: ['LAMP'],
-  //   });
-  // } 
-  // getRandomDataAndPostToDB();
   // username input var
   const [usernameInput, setUsernameInput] = useState('');
   // password input var
@@ -64,6 +44,7 @@ function Login() {
     setUsernameInput('');
     setPasswordInput('');
   }
+
   return (
     <div id="LOGIN">
       <h1 className="login-title">Love Overflow!</h1>
@@ -76,6 +57,7 @@ function Login() {
       </div>
       <Link className="create-acc-link" to="/signup">Create An Account</Link>
     </div>
+
 
   return (
     <div>Login
@@ -92,9 +74,6 @@ function Login() {
         <Route path='/signup' element={<Signup />} />
       </Routes>
     </Router>
-
-
-
     </div>
 
   )

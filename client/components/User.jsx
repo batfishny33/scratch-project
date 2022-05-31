@@ -33,7 +33,9 @@ function User(props) {
           <button onClick={toggleButton} className="like-btn"><i id={liked ? 'liked' : 'notLiked'} className="like-icon fa-solid fa-face-grin-hearts"></i></button>
         </div>
       </div>
-import React from 'react';
+    </div>
+  )
+}
 
 function User(props) {
   const { fullName, username, imgURL, bio, techStack, likedUsers } = props.userDetails;

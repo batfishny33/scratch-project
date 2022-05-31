@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import User from './User';
 import axios from 'axios';
@@ -36,10 +35,6 @@ function UserDisplay() {
         </select>
       </div>
       {shuffleArray(users)}
-=======
-import React, { useEffect } from 'react';
-import axios from 'axios';
-import User from './User.jsx';
 
 
 
@@ -74,7 +69,6 @@ function UserDisplay(props) {
   return (
     <div>  
        {dat}
->>>>>>> dev
     </div>
   )
 }
