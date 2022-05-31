@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/UserController.js');
-const express = require('express');
+
 
 
 // Search For Users (for filtering preferences)
