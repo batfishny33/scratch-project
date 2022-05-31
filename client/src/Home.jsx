@@ -1,7 +1,7 @@
 import React from 'react';
 import Sidebar from '../components/Sidebar';
 import UserDisplay from '../components/UserDisplay';
-import '../styles/home.css';
+
 
 
 function Home() {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import axios from 'axios';
-import '../styles/login.css';
+
 import Signup from '../components/Signup.jsx';
 import { BrowserRouter as Router, Routes, Route ,Link } from 'react-router-dom'; 
 
@@ -37,6 +37,8 @@ function Login() {
         // displays error msg if invalid
         document.querySelector('.error-msg').style.display = 'block';
       } else {
+        console.log('res from user from the db ',res)
+        //should assign this to the currentUser
         window.location.assign('/home');
       }
     })
@@ -58,25 +60,8 @@ function Login() {
       <Link className="create-acc-link" to="/signup">Create An Account</Link>
     </div>
 
-
-  return (
-    <div>Login
-      <form className="login" action='/users/signin' method='post'>
-        <label for='username'>Username: </label>
-        <input type='text' name='username' id='username'></input>
-        <label for='password'>Password: </label>
-        <input type='text' name='password' id='password'></input>
-        <input type='submit' value='Log In'></input>
-      </form>
-      <Router>
-      <Link to='/signup'>Sign up here</Link>
-      <Routes>
-        <Route path='/signup' element={<Signup />} />
-      </Routes>
-    </Router>
-    </div>
-
   )
+  
 }
 
 export default Login;

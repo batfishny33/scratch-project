@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/navbar.css';
+
+
 
 import React, { useContext } from 'react';
 import Match from './Match';
