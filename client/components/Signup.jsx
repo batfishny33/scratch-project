@@ -1,29 +1,46 @@
 import React from 'react';
-import axios from 'axios';
-import '../styles/signup.css';
+
+
+//for later: change "tech stack" from a text field where user inputs a string to multiple options user can click on to add
+  //MAYBE (stretch) allow them to input a custom value in addition to clickable multiple options
+
+
+//send a post request to /users to create a new user
+
+// Required keys in order:
+// Age: Number
+// fullName: string
+// username: String
+// password: String
+// imgURL: string (idk yet…)
+
+
+//to add: check if username is unique before allowing signup to complete
 
 
 function Signup() {
   // send to create
   return (
-  <div id="SIGNUP">
-    <div className="signup-form">
-      <h1>Signup</h1>
-      <input className="username-input" type="number" placeholder="Age" />
-      <input className="password-input" type="text" placeholder="Full Name" />
-      <select id="gender-select">
-        <option value="Male">Male (0101001)</option>
-        <option value="Female">Female (011001)</option>
-        <option value="Non-Binary">Non-Binary (12345)</option>
-      </select>
-      <input className="password-input" type="text" placeholder="Username" />
-      <input className="username-input" type="password" placeholder="Password" />
-      <input className="password-input" type="text" placeholder="Bio, Be Creative!" />
-      <input className="username-input" type="text" placeholder="img URL lol" />
-      <button className="signup-btn">Enter</button>
-      <p className="error-msg">Error</p>
+    <div>Signup
+      <form className="signup" action='/users' method='post'>
+        <label for='age'>Age: </label>
+        <input type='number' name='age' id='age'></input>
+        <label for='fullName'>Full Name: </label>
+        <input type='text' name='fullName' id='fullName'></input>
+        <label for='username'>Username: </label>
+        <input type='text' name='username' id='username'></input>
+        <label for='password'>Password: </label>
+        <input type='text' name='password' id='password'></input>
+        <label for='imgURL'>Image: </label>
+        <input type='text' name='imgURL' id='imgURL'></input>
+        <label for='bio'>Bio: </label>
+        <input type='text' name='bio' id='bio'></input>
+        <label for='techStack'>Tech Stack: </label>
+        <input type='text' name='techStack' id='techStack'></input>
+
+        <input type='submit' value='Sign Up'></input>
+      </form>
     </div>
-  </div>
   )
 }
 
