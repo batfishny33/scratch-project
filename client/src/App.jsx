@@ -1,13 +1,9 @@
-<<<<<<< HEAD
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-=======
->>>>>>> dev
 
 import React, { useState, createContext } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home.jsx';
 import Login from '../components/Login.jsx';
+import Signup from '../components/Signup.jsx';
 import { currentUserContext } from './Context.js';
 
 /*
@@ -31,15 +27,8 @@ function App() {
  
 
   return (
-<<<<<<< HEAD
-  <Router>
-    <Routes>
-        <Route path="/" exact element={<Login />} />
-        <Route path="/home" exact element={<Home />} />
-        <Route path="/signup" exact element={<Signup />} />
-    </Routes>
-  </Router>
-=======
+
+
     <div>
       <h1>U &amp; I</h1>
       <currentUserContext.Provider value={currentUser} >
@@ -48,7 +37,6 @@ function App() {
      
       </div>
       
->>>>>>> dev
   )
 }
 
