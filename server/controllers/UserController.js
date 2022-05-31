@@ -128,7 +128,8 @@ userController.updateUserMatches = async (req, res, next) => {
 }
 
 userController.createUser = async (req, res, next) => {
-  const { age, fullName, gender, username, password, phone, likedMe, likedUsers, matches, imgURL, bio, techStack } = req.body;
+  const { age, fullName, gender, username, password, phone, imgURL, bio, techStack } = req.body;
+  console.log(req.body);
   try {
     res.locals.newUser = await User.create({
       age: age,
@@ -137,9 +138,6 @@ userController.createUser = async (req, res, next) => {
       username: username,
       password: password,
       phone: phone,
-      likedMe: likedMe,
-      likedUsers: likedUsers,
-      matches: matches,
       imgURL: imgURL,
       bio: bio,
       techStack: techStack,
