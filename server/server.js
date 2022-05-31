@@ -4,7 +4,8 @@ const path = require('path')
 const cors = require('cors');
 const axios = require('axios');
 const app = express();
-const UserRouter = require('./routes/UserController.js');
+const UserRouter = require('./routes/UserRouter.js');
+const cookieParser = require('cookie-parser');
 const PORT = 3000;
 
 app.use(cors());
