@@ -19,6 +19,7 @@ import React from 'react';
 
 
 function Signup() {
+  // send to create
   return (
     <div>Signup
       <form className="signup" action='/users' method='post'>

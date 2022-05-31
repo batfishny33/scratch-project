@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+=======
+>>>>>>> dev
 
 import React, { useState, createContext } from 'react';
 import Home from './Home.jsx';
@@ -25,6 +31,15 @@ function App() {
  
 
   return (
+<<<<<<< HEAD
+  <Router>
+    <Routes>
+        <Route path="/" exact element={<Login />} />
+        <Route path="/home" exact element={<Home />} />
+        <Route path="/signup" exact element={<Signup />} />
+    </Routes>
+  </Router>
+=======
     <div>
       <h1>U &amp; I</h1>
       <currentUserContext.Provider value={currentUser} >
@@ -33,6 +48,7 @@ function App() {
      
       </div>
       
+>>>>>>> dev
   )
 }
 

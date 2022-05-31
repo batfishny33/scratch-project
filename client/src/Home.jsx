@@ -1,7 +1,22 @@
+<<<<<<< HEAD
+import React, { useState } from 'react';
+=======
 import React from 'react';
+>>>>>>> dev
 import Sidebar from '../components/Sidebar';
 import UserDisplay from '../components/UserDisplay';
+import '../styles/home.css';
 
+const Home = () => {
+  const [loggedInAs, setLoggedInAs] = useState('');
+
+<<<<<<< HEAD
+  return (
+    <div id="HOME">
+      <Sidebar className="sidebar"/>
+      <UserDisplay className="user-display"/>
+    </div>
+=======
 function Home() {
 
   // DummyData, delete and change to users={[]} when the fetch in UserDisplay works 
@@ -15,6 +30,7 @@ function Home() {
       <UserDisplay users={dummyData} />
     </div>
 
+>>>>>>> dev
   )
 }
 
